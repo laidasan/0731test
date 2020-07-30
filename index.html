@@ -9,7 +9,266 @@
 </head>
 <body>
     <div id="app">
-        <div class="banner"></div>
+        <div class="banner">
+            <carousel :desk-bks="bannerDestBks"></carousel>
+        </div>
+        <header class="header" :class="{isActiveMenu:isActiveMenu}">
+            <div class="header-container">
+                <div class="header-container-content">
+                    <div class="header__logo-box img-box">
+                        <img class="header__logo" alt="">
+                    </div>
+                </div>
+                <div class="header-container-content">
+                    <div class="header__menu" @click="toggleMenu"><span></span></div>
+                    <ul class="header__menu-list" @click="goTarget">
+                        <!-- <header-li v-for="item in headerList" :key="item.id" :target="item.moveTo" :txt="item.txt"></header-li> -->
+                        <!-- <li class="header__menu-list__item-f1" v-for="item in headerList" :key="item.id + 'a'" :target="item.moveTo"><a href="javascript:;">{{item.txt}}</a></li> -->
+                        <!-- <li class="header__menu-list__item-f1"><a href="javascript:;">B</a></li>
+                        <li class="header__menu-list__item-f1"><a href="javascript:;">C</a></li>
+                        <li class="header__menu-list__item-f1"><a href="javascript:;">D</a></li> -->
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="main-container">
+                <div class="section section--card" ref="A">
+                        <div class="grid-container">
+                            <div class="col-24 sm:col-12 md:col-6">
+                                <div class="card">
+                                    <div class="card__img-box img-box"><img src="" alt="CardImg"></div>
+                                    <div class="card__txt"></div>
+                                </div>
+                            </div>
+                            <div class="col-24 sm:col-12 md:col-6">
+                                <div class="card">
+                                    <div class="card__img-box img-box"><img src="" alt="CardImg"></div>
+                                    <div class="card__txt"></div>
+                                </div>
+                            </div>
+                            <div class="col-24 sm:col-12 md:col-6">
+                                <div class="card">
+                                    <div class="card__img-box img-box"><img src="" alt="CardImg"></div>
+                                    <div class="card__txt"></div>
+                                </div>
+                            </div>
+                            <div class="col-24 sm:col-12 md:col-6">
+                                <div class="card">
+                                    <div class="card__img-box img-box"><img src="" alt="CardImg"></div>
+                                    <div class="card__txt"></div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <div class="section section--article">
+                    <div class="article">
+                        <div class="article-container">
+                            <h1 class="article__title">Title 1</h1>
+                            <div class="article__txt">
+                                <p></p>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section section--blog" ref="B">
+                    <div class="blog">
+                        <div class="blog-container">
+                           
+                            <div class="blog-main md:f-r">
+                                <div class="blog__content">
+                                    <div class="blog__img-box img-box main"><img src="" alt=""></div>
+                                    <div class="blog__txt main">
+                                        <div class="p-group">
+                                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus nisi ducimus veniam enim, maxime natus quod, non reprehenderit consectetur libero praesentium repellat numquam cupiditate repellendus hic minima in dolor ea.</p>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores eaque animi quos eligendi esse, aliquam ipsam commodi molestias cupiditate incidunt nulla tempora accusantium ratione dolores unde ducimus aperiam blanditiis consequuntur!</p>
+                                        </div>
+                                        <div class="p-group">
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores eaque animi quos eligendi esse, aliquam ipsam commodi molestias cupiditate incidunt nulla tempora accusantium ratione dolores unde ducimus aperiam blanditiis consequuntur!</p>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores eaque animi quos eligendi esse, aliquam ipsam commodi molestias cupiditate incidunt nulla tempora accusantium ratione dolores unde ducimus aperiam blanditiis consequuntur!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blog-side">
+                                <div class="blog__content">
+                                    <div class="blog-side-group">
+                                        <div class="blog__img-box img-box side"><img src="" alt=""></div>
+                                        <div class="blog__txt side"></div>
+                                    </div>
+                                    <div class="blog-side-group">
+                                        <div class="blog__img-box img-box side"><img src="" alt=""></div>
+                                        <div class="blog__txt side"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section section--table" ref="C">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th>Title</th>
+                          <th>Content</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                            <td>
+                                <div class="tag">Hot</div>
+                                <div class="title">
+                                    <h3>title</h3>
+                                    <p>great</p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="content">
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi dolorem autem sint nam, distinctio modi quisquam dolorum ducimus facere expedita nisi sit unde culpa cupiditate impedit incidunt delectus! Ex, tempora.</p>
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi dolorem autem sint nam, </p>
+                                    <a href="javascript:;" class="btn-a btn--table">Go</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="tag">Hot</div>
+                                <div class="title">
+                                    <h3>title</h3>
+                                    <p>great</p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="content">
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi dolorem autem sint nam, distinctio modi quisquam dolorum ducimus facere expedita nisi sit unde culpa cupiditate impedit incidunt delectus! Ex, tempora.</p>
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi dolorem autem sint nam, </p>
+                                    <a href="javascript:;" class="btn-a btn--table">Go</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="tag">Hot</div>
+                                <div class="title">
+                                    <h3>title</h3>
+                                    <p>great</p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="content">
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi dolorem autem sint nam, distinctio modi quisquam dolorum ducimus facere expedita nisi sit unde culpa cupiditate impedit incidunt delectus! Ex, tempora.</p>
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi dolorem autem sint nam, </p>
+                                    <a href="javascript:;" class="btn-a btn--table">Go</a>
+                                </div>
+                            </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+                <div class="section section--blog" ref="D">
+                    <div class="blog">
+                        <div class="blog-container">
+                            <div class="blog-main md:f-l">
+                                <div class="blog__content">
+                                    <div class="blog__img-box img-box main"><img src="" alt=""></div>
+                                    <div class="blog__txt main">
+                                        <div class="p-group">
+                                            <p></p>
+                                            <p></p>
+                                        </div>
+                                        <div class="p-group">
+                                            <p></p>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blog-side">
+                                <div class="blog__content">
+                                    <div class="blog-side-group">
+                                        <div class="blog__img-box img-box side"><img src="" alt=""></div>
+                                        <div class="blog__txt side"></div>
+                                    </div>
+                                    <div class="blog-side-group">
+                                        <div class="blog__img-box img-box side"><img src="" alt=""></div>
+                                        <div class="blog__txt side"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="footer-container grid-container">
+                <div class="footer-item md:col-8">
+                    <div class="footer__content">
+                        <h3 class="footer__content__title">Title 3</h3>
+                        <ul class="footer__content-list">
+                            <li>
+                                <div class="img-box"><img src="" alt="Img"></div>
+                                <div class="txt">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img-box"><img src="" alt="Img"></div>
+                                <div class="txt">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img-box"><img src="" alt="Img"></div>
+                                <div class="txt">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="footer-item md:col-8">
+                    <div class="footer__content">
+                        <h3 class="footer__content__title">Title 3</h3>
+                        <ul class="footer__content-list">
+                            <li>
+                                <div class="img-box"><img src="" alt="Img"></div>
+                                <div class="txt">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img-box"><img src="" alt="Img"></div>
+                                <div class="txt">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img-box"><img src="" alt="Img"></div>
+                                <div class="txt">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="footer-item md:col-8">
+                    <div class="footer__content">
+                        <h3 class="footer__content__title">Title 3</h3>
+                        <div class="img-box"><img src="" alt="Img"></div>
+                        <div class="footer__content__txt">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis quisquam laudantium perspiciatis laborum eum eos enim iste ullam repellendus voluptatem veritatis, dignissimos velit voluptas? Recusandae harum aperiam repudiandae quasi id?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.js'></script>
+    <script src="./app.js"></script>
 </body>
 </html>

@@ -1,23 +1,127 @@
 .header {
-    
+    background-color: #333;
+
+
+
+    // isActiveMenu
+    &.isActiveMenu &__menu {
+
+        > span {
+            // background-color: transparent;
+
+            &::after {
+                // top: 0;
+                // transform: rotateZ(45deg);
+            }
+            &::before {
+                // top: 0;
+                // transform: rotateZ(-45deg);
+            }
+        }
+
+        &-list {
+            // transform: translateX(0);
+        }
+    }
+
     &-container {
+        position: relative;
+        min-height: 60px;
+        max-width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
         &-content {
 
         }
     }
-    &__logo-box {
 
+    &__logo-box {
+        width: 51px;
+        min-height: 30px;
+    
+
+        background-color: #aaa;
     }
 
     &__menu {
 
+        // menu-hum , use presudo
+        position: absolute;
+        right: 0; top:0; bottom: 0;
+        z-index: 3;
+        width: 24px;
+        height: 30px;
+        margin: auto;
+        cursor: pointer;
+
+        > span {
+            display: block;
+            @include menu-hum(3px,24px,true);
+            width: auto;
+            @extend %ab-fill;
+            margin: auto;
+            background-color: $color-white;
+
+            
+            &::after,&::before {
+                background-color: $color-white;
+            }
+
+        }
+
         &-list {
+
             &__item {
                 &-f1 {
 
+                    >a {
+                        @include link {
+                            @include font(2,0,1);
+                            text-decoration: none;
+                            color: #fff;
+                        }
+                    }
                 }
             }
         }
+    }
+
+    @include respond(md) {
+
+        &-container {
+            max-width: 95%;
+        }
+    
+        &__logo-box { }
+    
+        &__menu {
+            display: none;
+    
+            &-list {
+                font-size: 0;
+    
+                &__item {
+                    &-f1 {
+                        display: inline-block;
+    
+                        >a {
+                            @include link {
+                                @include font(3,0,1);
+                                text-decoration: none;
+                                color: #fff;
+                                padding-left: nth($p,3);
+                                padding-right: nth($p,3);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
     }
 }

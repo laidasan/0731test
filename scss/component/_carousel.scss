@@ -125,7 +125,8 @@
     
     &-container {
         position: relative;
-        height: 450px;
+        // height: 450px;
+        padding-top: 35%;
         overflow: hidden;
         background-color: #0b0d12;
     }
@@ -254,22 +255,6 @@
     
             &__content {
 
-            }
-        }
-
-        &__control {
-            &__timer {
-                &-list {
-                    > li {
-                        flex-basis: 60px;
-                        height: $timerDeskHeight;
-
-                        &::before , & > .bar {
-                            top: $timerDeskBarHeight; bottom: $timerDeskBarHeight;
-                        }
-
-                    }
-                }
             }
         }
     }

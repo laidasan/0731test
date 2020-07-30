@@ -1,4 +1,134 @@
 
 .table {
-    @include table(600px);
+    @include table(90%);
+    border-width: 1px;
+    border-style: solid;
+
+
+    th {
+        border-bottom: 1px solid;
+
+        &:first-child {
+            border-right: 1px solid;
+        }
+    }
+
+    tr:last-child {
+        > td {
+            border-bottom: 0;
+        }
+    }
+    td {
+        
+        // position: relative;
+        // overflow: hidden;
+
+
+        &:first-child {
+            border-width: 0 1px 1px 0;
+            border-style: solid;
+        }
+        &:nth-child(2) {
+
+        }
+
+        > .tag {
+            position: absolute;
+            right: -36px; top: -36px;
+            width: 60px;
+            height: 60px;
+            text-align: center;
+            background-color: brown;
+            color: $color-white;
+    
+            transform: rotateZ(45deg);
+        
+
+            &::before {
+                content: '';
+                display: inline-block;
+                height: 100%;
+                width: 0;
+                vertical-align: bottom;
+            }
+        }
+
+        > .title {
+
+        }
+
+        >.content {
+
+            > p:first-child {
+
+            }
+
+
+        }
+    }
+
+
+    @include respond(md) {
+        @include table(90%);
+
+
+        th {
+            padding-top: nth($p,3);
+            padding-bottom: nth($p,3);
+        }
+    
+        td {
+            position: relative;
+            overflow: hidden;
+    
+    
+            &:first-child {
+                width: 25%;
+                padding-top: nth($p,6);
+                padding-bottom: nth($p,6);
+                padding-left: nth($p,12);
+            }
+            &:nth-child(2) {
+                padding-left: nth($p,3);
+                padding-right: nth($p,3);
+            }
+    
+            > .tag {
+                position: absolute;
+                right: -36px; top: -36px;
+                width: 60px;
+                height: 60px;
+                text-align: center;
+                background-color: brown;
+                color: $color-white;
+        
+                transform: rotateZ(45deg);
+            
+    
+                &::before {
+                    content: '';
+                    display: inline-block;
+                    height: 100%;
+                    width: 0;
+                    vertical-align: bottom;
+                }
+            }
+    
+            > .title {
+    
+            }
+    
+            >.content {
+                display: flex;
+                align-items: center;
+    
+                > p:first-child {
+    
+                }
+    
+    
+            }
+
+        }
+    }
 }

@@ -41,7 +41,9 @@
 
         @if $key == 'xs' {
             .grid-container {
-                max-width: map-get($wrapper-width,$key);
+                // max-width: map-get($wrapper-width,$key);
+                $w: map-get($wrapper-width,$key);
+                @include grid-container($w);
                 margin-right: auto;
                 margin-left:  auto;
                 @include clear;

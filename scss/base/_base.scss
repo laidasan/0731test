@@ -9,8 +9,7 @@ html {
     }
 }
 
-.main {
-    > .section {
-        
-    }
+main .section {
+    margin-top: nth($m,12);
+    margin-bottom: nth($m,12);
 }

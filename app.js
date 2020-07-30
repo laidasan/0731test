@@ -41,21 +41,81 @@ let map = {
 let data = {
     // bannerDeskBks: null,
     // bannerMobileBks: null,
-    bannerDestBks: map.desk
+    bannerDestBks: map.desk,
+    isActiveMenu: false,
+    headerList: [
+      {id: 0 , txt: "A" , moveTo:"A"},
+      {id: 1 , txt: "B" , moveTo:"B"},
+      {id: 2 , txt: "C" , moveTo:"C"},
+      {id: 3 , txt: "D" , moveTo:"D"},
+    ]
 }
 
 
+Vue.component('headerLi',{
+  props: {
+    target: {
+      type: String,
+      default: ''
+    },
+    txt: {
+      type: String,
+      default: ''
+    }
+  },
+  data() {
+    return {
+    }
+  },
+  template: 
+  `<li class="header__menu-list__item-f1">
+    <a href="javascript:;">{{txt}}</a>
+  </li>
+  `
+})
 
-
-new Vue({
+let vm = new Vue({
     el: '#app',
     data,
     components: {
         carousel
     },
     methods: {
-        toggleMenu() { this.activeMenu = !this.activeMenu },
-        goPage(index) { this.nowPath = index },
-        carouselGo() { this.$children.forEach((com) => com.go()) }
+        toggleMenu() { this.isActiveMenu = !this.isActiveMenu },
+        goTarget(e) {
+          let target = this.$refs[e.target.moveTo]
+          let move = target.offsetTop - 150
+          window.scrollTo({
+            top: move,
+            behavior: "smooth"
+          })
+          },
     }
 })
+
+
+
+const $headerMenuList = document.querySelector('.header__menu-list')
+console.log($headerMenuList)
+
+function createListItem(data) {
+  if(!(data instanceof Array)) { 
+    console.error('need array list type data')
+    return 
+  }
+
+  data.forEach(item => {
+    let li = document.createElement('li')
+    let a = document.createElement('a')
+    a.href="javascript:;"
+    li.className = "header__menu-list__item-f1"
+    a.textContent = item.txt
+    li.moveTo = item.moveTo
+    a.moveTo = item.moveTo
+    li.append(a)
+    $headerMenuList.append(li)
+  })
+}
+
+createListItem(data.headerList)
+
