@@ -144,3 +144,18 @@ $xl-ring-ball-config: (
         big-position: right bottom
     )
 );
+
+// carousel timer config
+$timerBaseBk: #aaa;
+$timerActive: #00aeff;
+$timerActiveBk: #006fb2;
+$timerContainerBk: #0b0d12;
+$timerMobileHeight: 18px;
+$timerDeskHeight: 26px;
+$timerRunTime: 6s;
+$timerBarHeight: 7px;
+$timerDeskBarHeight: 10px;
+
+// carousel controler config
+$controlerArrowColor: #4296ce;
+$controlerArrowColorHover: #90e4ff;
