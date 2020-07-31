@@ -12,4 +12,10 @@ html {
 main .section {
     margin-top: nth($m,12);
     margin-bottom: nth($m,12);
+
+    @include respond(md) {
+        &--card {
+            margin-top: 60px;
+        }
+    }
 }

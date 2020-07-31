@@ -20,11 +20,11 @@
     }
     td {
         
-        // position: relative;
-        // overflow: hidden;
-
+        position: relative;
+        overflow: hidden;
 
         &:first-child {
+            
             border-width: 0 1px 1px 0;
             border-style: solid;
         }
@@ -78,15 +78,17 @@
         }
     
         td {
-            position: relative;
-            overflow: hidden;
+            // position: relative;
+            // overflow: hidden;
     
     
             &:first-child {
-                width: 25%;
+                width: 23%;
                 padding-top: nth($p,6);
                 padding-bottom: nth($p,6);
                 padding-left: nth($p,12);
+                margin-right: $gutter;
+               
             }
             &:nth-child(2) {
                 padding-left: nth($p,3);
@@ -115,7 +117,6 @@
             }
     
             > .title {
-    
             }
     
             >.content {
